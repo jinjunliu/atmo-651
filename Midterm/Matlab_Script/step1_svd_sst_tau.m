@@ -53,6 +53,9 @@
    % u component of momentum flux, unit:N/m^2   
    tauy = ncread(tauyfile,'vflx',[lon_start,lat_start,time_start],[nlon,nlat,ntime]);                  % v component of momentum flux, unit:N/m^2 
 
+   % print taux shape
+   disp('taux shape:')
+   disp(size(taux))
 %------------------
 % END of data input
 %------------------
@@ -64,17 +67,18 @@
    taux=reshape(taux,[nlon,nlat,12,nyear]);
    tauy=reshape(tauy,[nlon,nlat,12,nyear]);
     
-%    sstmean=squeeze(nanmean(sst,4));
-%    tauxmean=squeeze(nanmean(taux,4));
-%    tauymean=squeeze(nanmean(tauy,4));
+%     sstmean=squeeze(nanmean(sst,4));
+%     tauxmean=squeeze(nanmean(taux,4));
+%     tauymean=squeeze(nanmean(tauy,4));
 
-   sstmean=squeeze(mean(sst,4));
-   tauxmean=squeeze(mean(taux,4));
-   tauymean=squeeze(mean(tauy,4));
+%    sstm?mean(tauy,4));
    
    sst=sst-repmat(sstmean,[1,1,1,nyear]);
    taux=taux-repmat(tauxmean,[1,1,1,nyear]);
    tauy=tauy-repmat(tauymean,[1,1,1,nyear]);
+
+   % show first year data
+   taux1=taux(45:50, 12:17,1,1);
  
    sst=reshape(sst,[nlon,nlat,ntime]);
    taux=reshape(taux,[nlon,nlat,ntime]);
