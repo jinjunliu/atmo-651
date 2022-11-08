@@ -67,18 +67,18 @@
    taux=reshape(taux,[nlon,nlat,12,nyear]);
    tauy=reshape(tauy,[nlon,nlat,12,nyear]);
     
-%     sstmean=squeeze(nanmean(sst,4));
-%     tauxmean=squeeze(nanmean(taux,4));
-%     tauymean=squeeze(nanmean(tauy,4));
-
-%    sstm?mean(tauy,4));
+   sstmean=squeeze(mean(sst,4, 'omitnan'));
+   tauxmean=squeeze(mean(taux,4, 'omitnan'));
+   tauymean=squeeze(mean(tauy,4, 'omitnan'));
    
    sst=sst-repmat(sstmean,[1,1,1,nyear]);
    taux=taux-repmat(tauxmean,[1,1,1,nyear]);
    tauy=tauy-repmat(tauymean,[1,1,1,nyear]);
 
    % show first year data
-   taux1=taux(45:50, 12:17,1,1);
+   taux1=taux(45:48,12:15,1,1);
+   disp(size(repmat(sstmean,[1,1,1,nyear])))
+   disp(taux1)
  
    sst=reshape(sst,[nlon,nlat,ntime]);
    taux=reshape(taux,[nlon,nlat,ntime]);
@@ -86,6 +86,7 @@
 
    % calculate standard deviation
    sigma_sst=std(sst(:));
+   disp(sigma_sst)
    sigma_taux=std(taux(:));
    sigma_tauy=std(tauy(:));
 
@@ -102,6 +103,7 @@
  
    % concatenate taux tauy into one field
    tau=cat(2,taux,tauy);
+   disp(size(tau))
   
    % tranfer varibales into [space*time]
    tau=reshape(tau,[nlon*2*nlat,ntime]);
