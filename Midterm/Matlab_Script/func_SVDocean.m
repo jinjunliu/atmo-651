@@ -4,6 +4,9 @@ function[a,b,P,Q,thegma,SCF,r_coor]=func_SVDocean(S,Z,mod_num)
 [Nz,n]=size(Z);
 Csz=1/n*S*Z';
 [P,thegma,Q]=svd(Csz,'econ');
+disp(size(P));
+disp(size(thegma));
+disp(size(Q));
 %[P,thegma,Q]=svdecon(Csz);
 K=min(Ns,Nz);
 r=thegma(1:K,1:K)*thegma(1:K,1:K);
