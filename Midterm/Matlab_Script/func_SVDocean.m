@@ -16,6 +16,7 @@ SCF(i)=r(i,i)/C;
 end
 
 a=P'*S;
+disp(size(a));
 b=Q'*Z;
 Css=1/n*S*S';
 Czz=1/n*Z*Z';
