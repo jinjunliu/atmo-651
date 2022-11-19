@@ -1,0 +1,51 @@
+% Determines the type of document and font size
+\documentclass[12pt,a4paper]{article}
+% Font control
+\usepackage{mathptmx} % Times Roman Font
+\usepackage{helvet} % Arial/Helvetica font
+\renewcommand{\familydefault}{\sfdefault} % Makes serif text all Helvetica
+% Set up the page margins
+\usepackage[left=2.5cm, right=2.5cm, top=2.5cm]{geometry}
+% Allow graphics
+\usepackage{graphicx}
+% put graphs in place
+\usepackage[section]{placeins}
+% caption font
+\usepackage[font=small,labelfont=bf]{caption}
+% float package: picture position
+\usepackage{float}
+% symbols
+\usepackage{textcomp, gensymb}
+% Add your report title here
+\title{\huge{\textbf{OCNG/ATMO 651 Final Project: Linear Inverse Model of Tropical SSTs}}}
+% Add your name here
+\author{Jinjun Liu}
+\date{\today}
+
+% The start of the document
+\begin{document}
+% This adds the title page
+\maketitle
+\thispagestyle{empty}
+% This adds the abstract
+\begin{abstract}
+
+    To be done...
+
+\end{abstract}
+
+\tableofcontents
+
+% Move to a new page and set the page numbering from here
+\clearpage % moves to the next page
+\pagenumbering{arabic}
+
+\section{Introduction} % The start of a new section
+
+    To be done...
+
+\section{Datasets}\label{datasets}
+
+    To be done...
+
+\end{document}
