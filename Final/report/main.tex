@@ -48,9 +48,20 @@ Penland and Magorian proposed a linear inverse model (LIM) to predict sea surfac
 
 \section{Dataset and Method}\label{dataset-method}
 
+We use the NCEP/NCAR (National Centers for Environmental Prediction/National Center for Atmospheric Research) reanalysis SST as the dataset to build the LIM and make predictions. This dataset used in this project contains monthly-mean SSTs from January 1948 to September 2017. We divide the dataset into two parts: the training dataset and the test dataset. The training dataset contains the SSTs from January 1948 to December 1999, and the test dataset contains the SSTs from January 2000 to September 2017. We use the training dataset to build the LIM and use the test dataset to evaluate the performance of the LIM.
+
 The Python script that processes the data and generates the figures is available at \url{https://github.com/jinjunliu/atmo-651/blob/master/Final/ATMO651\_Final.ipynb}.
 
 \section{Results}\label{results}
+
+\subsection{EOF decomposition of SSTs}\label{eof-decomposition}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/EOFs_PCs.png}
+\caption{EOF decomposition of SSTs.}
+\label{fig:EOFs_PCs}
+\end{figure}
 
 \section{Aknowledgements}\label{acknowledgements}
 
